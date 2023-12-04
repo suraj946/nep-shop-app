@@ -37,7 +37,7 @@ export const ProductDetailShimmer = () => {
     <View style={{
       width:"95%",
       flex:1,
-      marginTop:verticalScale(50),
+      marginTop:verticalScale(20),
       alignSelf:"center"
     }}>
       <View style={{

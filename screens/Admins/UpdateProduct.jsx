@@ -109,7 +109,7 @@ const UpdateProduct = ({ navigation, route }) => {
     <>
       <View style={defaultStyle}>
         <Header back={true} />
-        <View style={{ marginVertical: verticalScale(16), paddingTop: verticalScale(40) }}>
+        <View style={{ paddingBottom: verticalScale(10), paddingTop: verticalScale(25) }}>
           <Text style={formHeading}>Update Product</Text>
         </View>
         {loading ? (

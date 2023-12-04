@@ -48,7 +48,7 @@ const AdminPanel = ({navigation}) => {
   return (
     <View style={defaultStyle}>
       <Header back={true} />
-      <View style={{marginVertical:verticalScale(10), paddingTop:verticalScale(45)}}>
+      <View style={{paddingBottom:verticalScale(10), paddingTop:verticalScale(25)}}>
         <Text style={formHeading}>Admin Panel</Text>
       </View>
       {

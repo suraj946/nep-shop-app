@@ -55,7 +55,7 @@ const Signup = ({navigation, route}) => {
   return (
     <>
     <View style={defaultStyle}>
-      <View style={{marginVertical:verticalScale(17)}}>
+      <View style={{marginBottom:verticalScale(10)}}>
         <Text style={formHeading}>Sign-Up</Text>
       </View>
       

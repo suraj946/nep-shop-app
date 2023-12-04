@@ -37,7 +37,7 @@ const ReviewScreen = ({route}) => {
       {
         fetchLoading ? <Loader /> : (
             <>
-            <View style={{marginVertical:verticalScale(10), paddingTop:verticalScale(45)}}>
+            <View style={{paddingBottom:verticalScale(10), paddingTop:verticalScale(25)}}>
                 <Text style={formHeading}>{productName}</Text>
             </View>
             {

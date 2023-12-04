@@ -14,7 +14,7 @@ import SearchByCategory from '../components/SearchByCategory';
 import { Toast } from 'react-native-toast-message/lib/src/Toast';
 import axios from 'axios';
 import { server } from '../redux/store';
-import { moderateScale, verticalScale } from 'react-native-size-matters';
+import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 import Showcase from '../components/Showcase';
 import ProductItem from '../components/ProductItem';
 import ProductWithBadge from '../components/ProductWithBadge';
@@ -140,7 +140,7 @@ export default Home;
 
 const styles = StyleSheet.create({
     subHeader:{
-        paddingTop:verticalScale(50),
+        paddingTop:verticalScale(15),
         flexDirection:"row",
         justifyContent:"space-between",
         alignItems:"center"
@@ -158,6 +158,6 @@ const styles = StyleSheet.create({
     },
     showCaseCont:{
         marginBottom:verticalScale(45),
-        padding:moderateScale(5)
+        paddingHorizontal:scale(5)
     }
 });

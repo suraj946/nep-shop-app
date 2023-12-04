@@ -180,7 +180,7 @@ const AdminProductList = ({route}) => {
   return (
     <View style={defaultStyle}>
         <Header back={true} />
-        <View style={{marginTop:verticalScale(55)}}/>   
+        <View style={{marginTop:verticalScale(25)}}/>   
 
         <View style={styles.searchView}>
             {

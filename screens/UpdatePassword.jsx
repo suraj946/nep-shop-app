@@ -25,7 +25,7 @@ const UpdatePassword = () => {
   return (
     <View style={defaultStyle}>
       <Header back={true} />
-      <View style={{marginVertical:verticalScale(16), paddingTop:verticalScale(40)}}>
+      <View style={{paddingVertical:verticalScale(25)}}>
         <Text style={formHeading}>Change Password</Text>
       </View>
       <View style={{...styles.formContainer, flex:0.8}}>

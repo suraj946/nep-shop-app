@@ -55,7 +55,7 @@ const UpdateProfile = ({navigation}) => {
     <View style={defaultStyle}>
       <Header back={true} />
 
-      <View style={{marginVertical:verticalScale(16), paddingTop:verticalScale(40)}}>
+      <View style={{paddingVertical:verticalScale(25)}}>
         <Text style={formHeading}>Edit Profile</Text>
       </View>
       

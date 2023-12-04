@@ -17,7 +17,7 @@ const Orders = ({route}) => {
   return (
     <View style={{...defaultStyle, backgroundColor:colors.color5}}>
       <Header back={true}/>
-      <View style={{marginTop:verticalScale(16), paddingTop:verticalScale(40)}}>
+      <View style={{paddingTop:verticalScale(25)}}>
         <Text style={formHeading}>Orders</Text>
       </View>
       <ChooseOrder status={status} buttonsArray={["All", "Processing", "Shipped", "Delivered"]} onButtonChange={setStatus}/>

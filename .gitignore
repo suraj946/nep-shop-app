@@ -2,6 +2,7 @@
 
 #extra
 dummyComponent/
+android/
 
 # dependencies
 node_modules/

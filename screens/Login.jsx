@@ -7,7 +7,7 @@ import ButtonDisable from '../components/ButtonDisable';
 import {useDispatch} from "react-redux";
 import { login } from '../redux/action/userAction';
 import { useMessageErrUser } from '../utils/hook';
-import { moderateScale } from 'react-native-size-matters';
+import { verticalScale } from 'react-native-size-matters';
 
 const Login = ({navigation, route}) => {
   const [email, setEmail] = useState("");
@@ -24,7 +24,7 @@ const Login = ({navigation, route}) => {
   return (
     <>
     <View style={defaultStyle}>
-      <View style={{marginVertical:moderateScale(18)}}>
+      <View style={{marginBottom:verticalScale(10)}}>
         <Text style={formHeading}>Login</Text>
       </View>
       <View style={styles.formContainer}>

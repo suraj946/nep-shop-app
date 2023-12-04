@@ -41,7 +41,7 @@ const ForgetPassword = ({navigation}) => {
   return (
     <>
     <View style={defaultStyle}>
-      <View style={{marginVertical:verticalScale(18)}}>
+      <View style={{marginBottom:verticalScale(10)}}>
         <Text style={formHeading}>Forget Password</Text>
       </View>
       <View style={styles.formContainer}>

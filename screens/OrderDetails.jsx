@@ -80,7 +80,7 @@ const OrderDetails = ({navigation, route}) => {
   return (
     <View style={{...defaultStyle, backgroundColor:colors.color4}}>
       <Header back={true} />
-      <View style={{marginTop:verticalScale(16), paddingTop:verticalScale(40)}}>
+      <View style={{paddingTop:verticalScale(25), paddingBottom:verticalScale(10)}}>
         <Text style={formHeading}>Order Details</Text>
       </View>
 

@@ -52,7 +52,7 @@ export default Header;
 const styles = StyleSheet.create({
     iconCont:{
         position:"absolute",
-        top:verticalScale(35),
+        // top:verticalScale(5),
         zIndex:10
     },
     cartCountText:{
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
     },
     logoTextStyle:{
         fontSize:moderateScale(25),
-        top:verticalScale(45),
+        top:verticalScale(15),
         color:colors.color1
     }
 });

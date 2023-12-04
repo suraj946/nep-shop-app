@@ -29,6 +29,7 @@ import SearchedProduct from './screens/SearchedProduct';
 import OrderDetails from './screens/OrderDetails';
 import AdminProductList from './screens/Admins/AdminProductList';
 import ReviewScreen from './screens/Admins/ReviewScreen';
+import { StatusBar } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,6 +40,11 @@ const Main = () => {
     }, [dispatch])
     
   return (
+    <>
+        <StatusBar
+            barStyle="dark-content"
+            backgroundColor="#ffffff" 
+        />
     <NavigationContainer>
         <Stack.Navigator 
             initialRouteName='Home'
@@ -63,8 +69,6 @@ const Main = () => {
                 <Stack.Screen name='Camera' component={CameraComponent} />
                 <Stack.Screen name='Searchedproduct' component={SearchedProduct} />
                 <Stack.Screen name='Orderdetails' component={OrderDetails} />
-                <Stack.Screen name='Reviewscreen' component={ReviewScreen} />
-
 
                 {/* <Stack.Screen name='Alert' component={CustomAlert} /> */}
 
@@ -76,11 +80,12 @@ const Main = () => {
                 <Stack.Screen name='Updateproduct' component={UpdateProduct} />
                 <Stack.Screen name='Addproduct' component={AddProduct} />
                 <Stack.Screen name='Managesimages' component={ManagesImages} />
+                <Stack.Screen name='Reviewscreen' component={ReviewScreen} />
             </Stack.Group>
         </Stack.Navigator>
         <Toast position='top' />
     </NavigationContainer>
-
+    </>
   )
 }
 

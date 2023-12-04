@@ -32,7 +32,7 @@ const ConfirmOrder = () => {
       <Heading
         text1={"Confirm"}
         text2={"Order"}
-        containerStyle={{ paddingTop: moderateScale(65) }}
+        containerStyle={{ paddingTop: moderateScale(25) }}
       />
       {totalCartItems <= 0 ? (
         <View style={styles.noItems}>

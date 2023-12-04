@@ -1,4 +1,4 @@
-import { Dimensions, Image, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { Dimensions, Image, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import React, { useEffect, useRef, useState } from 'react';
 import Header from '../components/Header';
 import {colors, defaultStyle} from "../styles/styles";
@@ -135,11 +135,16 @@ const Productdetails = ({route:{params}}) => {
   const discountedPrice = product.price - Math.round((product.price * product.discount)/100);
 
   return (
+  <>
+    <StatusBar
+          barStyle="dark-content"
+          backgroundColor={colors.color1} 
+    />
   <View style={{...defaultStyle, padding:0, backgroundColor:colors.color1}}>
     <Header back={true} />
     {
       fetchLoading ? <ProductDetailShimmer /> : (
-        <ScrollView style={{marginTop:verticalScale(50)}}>
+        <ScrollView style={{marginTop:verticalScale(20)}}>
           <Carousel 
             layout="stack"
             sliderWidth={SLIDER_WIDTH}
@@ -231,6 +236,7 @@ const Productdetails = ({route:{params}}) => {
       )
     }
   </View>
+  </>
   )
 }
 

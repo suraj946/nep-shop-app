@@ -102,7 +102,12 @@ const SearchedProduct = ({navigation, route}) => {
   return (
     <View style={{...defaultStyle, paddingBottom:0}}>
       <Header back={true} />
-      <Searchbar placeholder='Search...' onChangeText={(e)=>setKeyword(e)} value={keyword} style={{marginTop:verticalScale(55)}} />
+      <Searchbar 
+        placeholder='Search...' 
+        onChangeText={(e)=>setKeyword(e)} 
+        value={keyword} 
+        style={{marginTop:verticalScale(25)}} 
+      />
       <SearchByCategory style={{marginTop:verticalScale(0)}} categories={categories} category={category} setCategory={setCategory} />
       <View style={{marginTop:verticalScale(-5)}}>
         <Text style={formHeading}>Results</Text>

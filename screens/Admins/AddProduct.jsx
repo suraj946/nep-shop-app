@@ -8,6 +8,7 @@ import {
 import React, { useEffect, useState } from "react";
 import {
   colors,
+  defaultImage,
   defaultStyle,
   formHeading,
   inputStyling,
@@ -96,7 +97,7 @@ const AddProduct = ({ navigation, route }) => {
     <>
       <View style={defaultStyle}>
         <Header back={true} />
-        <View style={{ marginVertical: verticalScale(16), paddingTop: verticalScale(40) }}>
+        <View style={{ paddingBottom: verticalScale(10), paddingTop: verticalScale(25) }}>
           <Text style={formHeading}>New Product</Text>
         </View>
 
@@ -109,7 +110,7 @@ const AddProduct = ({ navigation, route }) => {
               <Avatar.Image
                 size={moderateScale(100)}
                 style={{ backgroundColor: colors.color1 }}
-                source={{ uri: image ? image : null }}
+                source={image ? { uri: image } :defaultImage.avatar }
               />
               <TouchableOpacity
                 activeOpacity={0.7}

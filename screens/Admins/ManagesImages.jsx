@@ -9,7 +9,7 @@ import {
   View,
 } from "react-native";
 import React, { useEffect, useState } from "react";
-import { colors, defaultStyle, formHeading } from "../../styles/styles";
+import { colors, defaultImage, defaultStyle, formHeading } from "../../styles/styles";
 import Header from "../../components/Header";
 import { Avatar } from "react-native-paper";
 import ButtonDisable from "../../components/ButtonDisable";
@@ -101,7 +101,7 @@ const ManagesImages = ({ navigation, route }) => {
   return (
     <View style={{ ...defaultStyle, backgroundColor: colors.color5 }}>
       <Header back={true} />
-      <View style={{ marginVertical: verticalScale(16), paddingTop: verticalScale(40) }}>
+      <View style={{ paddingBottom: verticalScale(10), paddingTop: verticalScale(25) }}>
         <Text style={formHeading}>Images</Text>
       </View>
 
@@ -122,7 +122,7 @@ const ManagesImages = ({ navigation, route }) => {
         </View>
       </ScrollView>
       <View style={styles.belowBox}>
-        <Image style={styles.belowBoxImg} source={{ uri: image }} />
+        <Image style={styles.belowBoxImg} source={image ? { uri: image } : defaultImage.avatar} />
         <View style={styles.actionCont}>
           <TouchableOpacity
             activeOpacity={0.8}

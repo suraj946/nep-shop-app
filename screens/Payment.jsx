@@ -90,7 +90,7 @@ const Payment = ({navigation, route}) => {
   ) : (
     <View style={defaultStyle}>
         <Header back={true} />
-        <Heading text1={"Payment"} text2={"Method"} containerStyle={{paddingTop:70}} />
+        <Heading text1={"Payment"} text2={"Method"} containerStyle={{paddingTop:25}} />
         <View style={styles.methodCont}>
             <RadioButton.Group value={paymentMethod} onValueChange={setPaymentMethod}>
                 <View style={styles.radioBtnCont}>
