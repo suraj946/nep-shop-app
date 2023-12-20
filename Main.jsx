@@ -23,8 +23,6 @@ import AdminOrders from './screens/Admins/AdminOrders';
 import UpdateProduct from './screens/Admins/UpdateProduct';
 import AddProduct from './screens/Admins/AddProduct';
 import ManagesImages from './screens/Admins/ManagesImages';
-import { useDispatch } from 'react-redux';
-import { loadUser } from './redux/action/userAction';
 import SearchedProduct from './screens/SearchedProduct';
 import OrderDetails from './screens/OrderDetails';
 import AdminProductList from './screens/Admins/AdminProductList';
@@ -34,11 +32,6 @@ import { StatusBar } from 'react-native';
 const Stack = createNativeStackNavigator();
 
 const Main = () => {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(loadUser());
-    }, [dispatch])
-    
   return (
     <>
         <StatusBar
@@ -69,8 +62,6 @@ const Main = () => {
                 <Stack.Screen name='Camera' component={CameraComponent} />
                 <Stack.Screen name='Searchedproduct' component={SearchedProduct} />
                 <Stack.Screen name='Orderdetails' component={OrderDetails} />
-
-                {/* <Stack.Screen name='Alert' component={CustomAlert} /> */}
 
                 {/* Admin Routes */}
                 <Stack.Screen name='Adminpanel' component={AdminPanel} />

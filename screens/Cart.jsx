@@ -1,6 +1,7 @@
 import {
   Alert,
   ScrollView,
+  StatusBar,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -61,6 +62,10 @@ const Cart = () => {
 
   return (
     <View style={{ ...defaultStyle, padding: moderateScale(0) }}>
+      <StatusBar
+            barStyle="dark-content"
+            backgroundColor="#ffffff" 
+      />
       <Header back={true} inCart={true} emptyCartHandler={emptyCartHandler} />
       <Heading
         text1={"Shopping"}

@@ -1,16 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import NetInfo from '@react-native-community/netinfo';
 import { Avatar, Button } from 'react-native-paper';
 import { colors } from '../styles/styles';
 import { moderateScale, verticalScale } from 'react-native-size-matters';
 import * as Linking from 'expo-linking';
+import { startActivityAsync, ActivityAction } from 'expo-intent-launcher';
 
 const ConnectionStatus = () => {
   const [isConnected, setIsConnected] = useState(true);
 
   const handlePress = async() => {
-    await Linking.openSettings();
+    if(Platform.OS=='ios'){
+      Linking.openURL('app-settings:')
+    }
+    else{
+      startActivityAsync(
+        ActivityAction.WIFI_SETTINGS
+      );
+    }
   }
 
   useEffect(() => {
@@ -43,7 +51,7 @@ const styles = StyleSheet.create({
         width:"100%",
         height:"100%",
         backgroundColor:colors.color2,
-        marginTop:verticalScale(200),
+        paddingTop:verticalScale(150),
         alignItems:"center"
     },
     icon:{

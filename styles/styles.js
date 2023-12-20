@@ -88,6 +88,6 @@ export const formStyles = StyleSheet.create({
 });
 
 export const defaultImage = {
-    avatar:require("../assets/defaultAvatar.jpg")
+    avatar:require("../assets/defaultAvatar.jpg"),
 }
 

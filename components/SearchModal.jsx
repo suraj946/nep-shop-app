@@ -41,8 +41,7 @@ const SearchModal = ({
               <Button onPress={handleClick} style={styles.seeAllBtn} textColor={colors.color2}>See All</Button> 
               :(
                 <View style={styles.notFoundBox}>
-                  <Text style={{fontSize:moderateScale(32), color:colors.color3_light}}>No Product Found</Text>
-                  <Text style={{fontSize:moderateScale(18), marginTop:verticalScale(4), color:colors.color3_light}}>Query : {searchQuery}</Text>
+                  <Text style={{fontSize:moderateScale(32), color:colors.color3_light}}>Nothing to show</Text>
                 </View>
               )
             }

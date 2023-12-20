@@ -1,4 +1,4 @@
-import { Alert, StyleSheet, TouchableOpacity, View, Text } from 'react-native';
+import { Alert, StyleSheet, TouchableOpacity, View, Text, ActivityIndicator } from 'react-native';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { colors, defaultStyle } from '../../styles/styles';
 import Header from '../../components/Header';

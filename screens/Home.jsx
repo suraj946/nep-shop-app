@@ -9,7 +9,7 @@ import Footer from '../components/Footer';
 import Heading from '../components/Heading';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllCategories } from '../redux/action/productAction';
-import { useMessageErrProduct } from '../utils/hook';
+import { useEffectOnChange, useMessageErrProduct } from '../utils/hook';
 import SearchByCategory from '../components/SearchByCategory';
 import { Toast } from 'react-native-toast-message/lib/src/Toast';
 import axios from 'axios';
@@ -19,6 +19,7 @@ import Showcase from '../components/Showcase';
 import ProductItem from '../components/ProductItem';
 import ProductWithBadge from '../components/ProductWithBadge';
 import { CardItemShimmer, CardWithBadgeShimmer, ProductCardShimmer } from '../components/Shimmers';
+import { loadUser } from '../redux/action/userAction';
 
 const Home = ({navigation}) => {
     const dispatch = useDispatch();
@@ -45,7 +46,6 @@ const Home = ({navigation}) => {
                 setRefreshing(false);
                 dispatch({type:"getHomeProductsSuccess", payload:data});
             }
-            dispatch(getAllCategories());
         } catch (error) {
             setRefreshing(false);
             dispatch({type:"getHomeProductsFail", payload:error.response.data.message});
@@ -57,10 +57,12 @@ const Home = ({navigation}) => {
     }, []);
 
     useEffect(() => {
-        getHomePage();
+        (async()=>{
+            await Promise.allSettled([getHomePage(), dispatch(loadUser()), dispatch(getAllCategories())]);
+        })()
     }, [dispatch]);
 
-    useEffect(() => {
+    useEffectOnChange(() => {
         let timeOut = setTimeout(() => {
             (async()=>{
                 try {

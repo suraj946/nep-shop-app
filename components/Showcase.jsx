@@ -24,7 +24,7 @@ const Showcase = ({Card, title, typeText, products}) => {
 
   return (
     <View style={styles.showCaseView}>
-      <Text style={styles.headingText}>{title}</Text>
+      {products?.length > 0 && <Text style={styles.headingText}>{title}</Text>}
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {
             products.map((item, index) => (

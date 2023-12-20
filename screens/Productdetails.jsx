@@ -37,6 +37,8 @@ const Productdetails = ({route:{params}}) => {
 
   const abortControllerRef = useRef(null);
 
+  const discountedPrice = product.price - Math.round((product.price * product.discount)/100);
+
   useErrorMessage(error, message, setError, setMessage);
 
   const fetchDetails = async()=>{
@@ -80,7 +82,7 @@ const Productdetails = ({route:{params}}) => {
     dispatch({type:"addToCart", payload:{
         product:params.id,
         name:product.name,
-        price:product.price,
+        price:discountedPrice,
         stock:product.stock,
         quantity,
         image:product.images[0]?.url
@@ -131,8 +133,6 @@ const Productdetails = ({route:{params}}) => {
       abortControllerRef.current?.abort();
     }
   }, []);
-
-  const discountedPrice = product.price - Math.round((product.price * product.discount)/100);
 
   return (
   <>

@@ -9,6 +9,7 @@ const ProductItem = ({
   image,
   name,
   price,
+  discount,
   stock,
   i,
   id,
@@ -18,7 +19,7 @@ const ProductItem = ({
   averageRating,
 
 }) => {
-    // console.log("Card item", Math.round(Math.random()));
+  const discountedPrice = price - Math.round((price * discount)/100);
   return (
     <TouchableOpacity
       style={{
@@ -51,7 +52,7 @@ const ProductItem = ({
               }}
               activeOpacity={0.8}
               onPress={() =>
-                addToCart({ id, name, image, stock, price, quantity: 1 })
+                addToCart({ id, name, image, stock, price : discountedPrice, quantity: 1 })
               }
             >
               <Button textColor={colors.color2}>Add</Button>

@@ -7,10 +7,9 @@ import { CustomBadge } from './ProductWithBadge';
 import Star from './Star';
 
 const ProductCard = ({
-    name, stock, image, price, i, id, navigation, addToCart, typeText, averageRating
+    name, stock, image, price, discount, i, id, navigation, addToCart, typeText, averageRating
 }) => {
-    // console.log("Card card", Math.round(Math.random()));
-
+    const discountedPrice = price - Math.round((price * discount)/100);
   return (
     <TouchableOpacity style={styles.productCardCont} onPress={()=>navigation.navigate("Productdetails", {id})} activeOpacity={1}>
         <View style={styles.badge}>
@@ -52,7 +51,7 @@ const ProductCard = ({
             >
                 <Button 
                     textColor={i%2 === 0 ? colors.color1 : colors.color2}
-                    onPress={()=>addToCart({id, name, image, stock, price, quantity:1})}
+                    onPress={()=>addToCart({id, name, image, stock, price : discountedPrice, quantity:1})}
                 >Add To Cart</Button>
             </TouchableOpacity>
         </View> 
